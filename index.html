@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Asif Iqbal, Ph.D. | Microbiologist</title>
+  <meta name="description" content="Academic portfolio website for Asif Iqbal, Ph.D., microbiologist and molecular biologist." />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+      color: #1f2937;
+      background: #f8fafc;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 0;
+    }
+
+    .logo {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      font-size: 0.95rem;
+      color: #475569;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #0f172a;
+    }
+
+    .hero {
+      padding: 90px 0 70px;
+      background: linear-gradient(135deg, #eef2ff, #ffffff 45%, #e0f2fe);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      background: white;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #334155;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      line-height: 1.05;
+      color: #0f172a;
+      margin-bottom: 18px;
+    }
+
+    .subtitle {
+      font-size: 1.2rem;
+      color: #475569;
+      max-width: 760px;
+      margin-bottom: 28px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 18px;
+      border-radius: 12px;
+      font-weight: 700;
+      border: 1px solid #0f172a;
+    }
+
+    .btn.primary {
+      background: #0f172a;
+      color: white;
+    }
+
+    .btn.secondary {
+      background: white;
+      color: #0f172a;
+    }
+
+    .info-card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+    }
+
+    .info-card h2 {
+      font-size: 1.5rem;
+      color: #0f172a;
+      margin-bottom: 12px;
+    }
+
+    .info-card p,
+    .info-card li {
+      color: #475569;
+    }
+
+    .info-list {
+      list-style: none;
+      margin-top: 18px;
+    }
+
+    .info-list li {
+      margin-bottom: 10px;
+    }
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      color: #0f172a;
+      margin-bottom: 26px;
+      border-left: 6px solid #0f172a;
+      padding-left: 14px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .card {
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 18px;
+      padding: 24px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    .card h3 {
+      color: #0f172a;
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+    }
+
+    .date {
+      color: #64748b;
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 10px;
+    }
+
+    ul.clean {
+      list-style: none;
+    }
+
+    ul.clean li {
+      padding: 12px 0;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    ul.clean li:last-child {
+      border-bottom: none;
+    }
+
+    .highlight {
+      background: #0f172a;
+      color: white;
+      border-radius: 22px;
+      padding: 30px;
+    }
+
+    .highlight h3,
+    .highlight .section-title {
+      color: white;
+    }
+
+    .highlight p,
+    .highlight li {
+      color: #dbeafe;
+    }
+
+    footer {
+      text-align: center;
+      padding: 28px 0;
+      border-top: 1px solid #e5e7eb;
+      color: #64748b;
+      background: white;
+    }
+
+    @media (max-width: 850px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding-top: 60px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="logo" href="#home">Asif Iqbal, Ph.D.</a>
+        <div class="nav-links">
+          <a href="#research">Research</a>
+          <a href="#publications">Publications</a>
+          <a href="#teaching">Teaching</a>
+          <a href="#awards">Awards</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Microbiologist • Molecular Biologist • Educator</span>
+          <h1>Asif Iqbal, Ph.D.</h1>
+          <p class="subtitle">
+            Research scientist trained in bacterial pathogenesis, antimicrobial resistance,
+            molecular microbiology, and host-relevant bacterial metabolic stress responses.
+          </p>
+          <div class="buttons">
+            <a class="btn primary" href="#contact">Contact Me</a>
+            <a class="btn secondary" href="#publications">View Publications</a>
+          </div>
+        </div>
+
+        <aside class="info-card">
+          <h2>Research Focus</h2>
+          <p>
+            Bacterial physiology, Staphylococcus aureus pathogenesis, bicarbonate stress,
+            metabolic adaptation, and antibiotic susceptibility.
+          </p>
+          <ul class="info-list">
+            <li><strong>Location:</strong> Baton Rouge, Louisiana</li>
+            <li><strong>Email:</strong> aiqbal5@lsu.edu</li>
+            <li><strong>Email:</strong> masifiqbal929@gmail.com</li>
+            <li><strong>Phone:</strong> 225-939-5394</li>
+            <li><strong>Status:</strong> U.S. Permanent Resident</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="research">
+      <div class="container">
+        <h2 class="section-title">Research Experience</h2>
+        <div class="grid-3">
+          <div class="card">
+            <p class="date">2023 – 2026</p>
+            <h3>Postdoctoral Fellow in Microbiology</h3>
+            <p>Pathobiological Sciences, School of Veterinary Medicine, Louisiana State University.</p>
+            <p>Project: Deciphering bicarbonate metabolic pathways in Staphylococcus aureus and their impacts on pathogenicity and antibiotic sensitivity.</p>
+          </div>
+
+          <div class="card">
+            <p class="date">2017 – 2022</p>
+            <h3>Ph.D. in Biochemistry</h3>
+            <p>Biological Sciences, Louisiana State University.</p>
+            <p>Dissertation: A membrane protein required for quorum sensing and virulence of Burkholderia glumae.</p>
+          </div>
+
+          <div class="card">
+            <p class="date">2014 – 2017</p>
+            <h3>Research Assistant</h3>
+            <p>Genetic Engineering and Biotechnology, Shahjalal University of Science and Technology.</p>
+            <p>Project: Production of recombinant cellulase and protease of bacterial isolates using municipal solid waste.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <h2 class="section-title">Education</h2>
+        <div class="grid-3">
+          <div class="card">
+            <p class="date">2022</p>
+            <h3>Ph.D., Biochemistry</h3>
+            <p>Louisiana State University, Baton Rouge, Louisiana, USA</p>
+          </div>
+          <div class="card">
+            <p class="date">2014</p>
+            <h3>M.S., Genetic Engineering and Biotechnology</h3>
+            <p>Shahjalal University of Science and Technology, Sylhet, Bangladesh</p>
+          </div>
+          <div class="card">
+            <p class="date">2012</p>
+            <h3>B.Sc., Genetic Engineering and Biotechnology</h3>
+            <p>Shahjalal University of Science and Technology, Sylhet, Bangladesh</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="publications">
+      <div class="container">
+        <h2 class="section-title">Selected Publications</h2>
+        <div class="card">
+          <ul class="clean">
+            <li>Iqbal A, Tumpa ZH, Blank BJ, Basel AH, Beavers WN. Defects in anaplerotic metabolism sensitizes Staphylococcus aureus small colony variants to bicarbonate. <em>Microbiology Spectrum</em>. 2025.</li>
+            <li>Iqbal A, Nwokocha G, Tiwari V, Barphagha IK, Grove A, Ham JH, Doerrler WT. A membrane protein of the rice pathogen Burkholderia glumae required for oxalic acid secretion and quorum sensing. <em>Molecular Plant Pathology</em>. 2023.</li>
+            <li>Iqbal A, Panta PR, Ontoy J, Bruno J, Ham JH, Doerrler WT. Chemical or genetic alteration of proton motive force results in loss of virulence of Burkholderia glumae. <em>Applied and Environmental Microbiology</em>. 2021.</li>
+            <li>Hakim A, Bhuiyan FR, Iqbal A, Emon TH, Ahmed J, Azad AK. Production and partial characterization of dehairing alkaline protease from Bacillus subtilis AKAL7 and Exiguobacterium indicum AKAL11. <em>Heliyon</em>. 2018.</li>
+            <li>Iqbal A, Hakim A, Hossain MS, Rahman MR, Islam K, Azim MF, Ahmed J, Assaduzzaman M, Hoq MM, Azad AK. Partial purification and characterization of serine protease produced through fermentation of organic municipal solid wastes. <em>Journal of Genetic Engineering and Biotechnology</em>. 2018.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="teaching">
+      <div class="container">
+        <h2 class="section-title">Teaching Experience</h2>
+        <div class="grid-3">
+          <div class="card">
+            <p class="date">Spring 2025</p>
+            <h3>Instructor, PBS 7007 Pathobiological Seminar</h3>
+            <p>Delivered lectures on scientific literature, guided student-led presentations, and provided feedback on scientific figures and interpretation of results.</p>
+          </div>
+          <div class="card">
+            <p class="date">Fall 2017 – Spring 2022</p>
+            <h3>Graduate Teaching Assistant, Microbiology Lab</h3>
+            <p>Instructed students in aseptic techniques, single-colony streaking, microscopy, biochemical tests, plaque assays, colony enumeration, and data analysis.</p>
+          </div>
+          <div class="card">
+            <p class="date">Fall 2017 – Spring 2022</p>
+            <h3>Graduate Teaching Assistant, Biology Lab</h3>
+            <p>Taught laboratory safety, pipetting, enzyme kinetics, glycolysis and fermentation, osmosis, photosynthesis, and basic molecular biology experiments.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="awards">
+      <div class="container">
+        <h2 class="section-title">Awards, Presentations & Service</h2>
+        <div class="grid-2">
+          <div class="card">
+            <h3>Awards & Honors</h3>
+            <ul class="clean">
+              <li>Dennis and Rechard O’Callaghan Award, 2025 Annual Meeting of SCB–ASM</li>
+              <li>MegaRobo-Biocytogen Travel Award, LSU School of Veterinary Medicine, 2024</li>
+              <li>Ron and Mary Neal Distinguished Graduate Student Fellowship, LSU, 2022</li>
+              <li>Simon Chang Biochemistry Support Fund, LSU, 2022</li>
+              <li>LSU BioGrads Award, Biological Sciences, LSU, 2019</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>Selected Oral Presentations</h3>
+            <ul class="clean">
+              <li>Defects in anaplerotic metabolism sensitizes Staphylococcus aureus small colony variants to bicarbonate.</li>
+              <li>Deciphering bicarbonate metabolic pathways in Staphylococcus aureus and their impacts on antibiotic sensitivity.</li>
+              <li>Bicarbonate protects Staphylococcus aureus from arachidonic acid killing.</li>
+              <li>A membrane protein required for quorum sensing and virulence of Burkholderia glumae.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight" style="margin-top: 22px;">
+          <h3>Professional Service & Leadership</h3>
+          <p>
+            Served as a poster-presentation judge at the 2025 Annual Meeting of SCB–ASM,
+            participated in BioGrad Society activities at LSU, and served as election commissioner
+            for the Bangladeshi Students Association at LSU.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="highlight">
+          <h3>Let’s Connect</h3>
+          <p>
+            Open to academic, postdoctoral, teaching, microbiology, molecular biology, and industry research opportunities related to bacterial pathogenesis, antimicrobial resistance, and host-relevant bacterial physiology.
+          </p>
+          <br />
+          <p><strong>Email:</strong> aiqbal5@lsu.edu</p>
+          <p><strong>Email:</strong> masifiqbal929@gmail.com</p>
+          <p><strong>Phone:</strong> 225-939-5394</p>
+          <p><strong>Location:</strong> Baton Rouge, Louisiana</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Asif Iqbal, Ph.D. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
