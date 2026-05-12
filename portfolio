@@ -1,0 +1,251 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { Card, CardContent } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+
+const publications = [
+  "Iqbal A, Tumpa ZH, Blank BJ, Basel AH, Beavers WN. Defects in anaplerotic metabolism sensitizes Staphylococcus aureus small colony variants to bicarbonate. Microbiology Spectrum. 2025.",
+  "Iqbal A, Nwokocha G, Tiwari V, Barphagha IK, Grove A, Ham JH, Doerrler WT. A membrane protein of the rice pathogen Burkholderia glumae required for oxalic acid secretion and quorum sensing. Molecular Plant Pathology. 2023.",
+  "Iqbal A, Panta PR, Ontoy J, Bruno J, Ham JH, Doerrler WT. Chemical or genetic alteration of proton motive force results in loss of virulence of Burkholderia glumae. Applied and Environmental Microbiology. 2021.",
+  "Hakim A, Bhuiyan FR, Iqbal A, Emon TH, Ahmed J, Azad AK. Production and partial characterization of dehairing alkaline protease from Bacillus subtilis AKAL7 and Exiguobacterium indicum AKAL11. Heliyon. 2018.",
+  "Iqbal A, Hakim A, Hossain MS, Rahman MR, Islam K, Azim MF, Ahmed J, Assaduzzaman M, Hoq MM, Azad AK. Partial purification and characterization of serine protease produced through fermentation of organic municipal solid wastes. Journal of Genetic Engineering and Biotechnology. 2018."
+];
+
+const awards = [
+  "Dennis and Rechard O’Callaghan Award, 2025 Annual Meeting of SCB–ASM",
+  "MegaRobo-Biocytogen Travel Award, LSU School of Veterinary Medicine, 2024",
+  "Ron and Mary Neal Distinguished Graduate Student Fellowship, LSU, 2022",
+  "Simon Chang Biochemistry Support Fund, LSU, 2022",
+  "LSU BioGrads Award, Biological Sciences, LSU, 2019"
+];
+
+const talks = [
+  "Defects in anaplerotic metabolism sensitizes Staphylococcus aureus small colony variants to bicarbonate — 2025 Annual Meeting of SCB–ASM",
+  "Deciphering bicarbonate metabolic pathways in Staphylococcus aureus and their impacts on antibiotic sensitivity — LSU Bacterial Pathogenesis Seminar, 2025",
+  "Bicarbonate protects Staphylococcus aureus from arachidonic acid killing — Gordon Research Seminar, 2024",
+  "A membrane protein required for quorum sensing and virulence of Burkholderia glumae — University of Florida College of Dentistry, 2022"
+];
+
+const teaching = [
+  {
+    title: "Instructor, PBS 7007 Pathobiological Seminar",
+    period: "Spring 2025",
+    details: "Delivered lectures on scientific literature, guided student-led presentations, and provided detailed feedback on figure interpretation and scientific communication."
+  },
+  {
+    title: "Graduate Teaching Assistant, BIOL 2051 Microbiology Lab",
+    period: "Fall 2017 – Spring 2022",
+    details: "Taught aseptic techniques, single-colony streaking, microscopy, biochemical tests, plaque assays, bacterial enumeration, and data analysis."
+  },
+  {
+    title: "Graduate Teaching Assistant, BIOL 1208 Biology Lab",
+    period: "Fall 2017 – Spring 2022",
+    details: "Taught laboratory safety, pipetting, enzyme kinetics, osmosis, photosynthesis, fermentation, and basic molecular biology experiments."
+  }
+];
+
+const mentors = [
+  "Rotation Ph.D. students in Pathobiological Sciences at LSU",
+  "Undergraduate research students in microbiology and bacterial physiology projects",
+  "Graduate and undergraduate students in scientific writing, experimental design, and data interpretation"
+];
+
+function Section({ id, title, icon, children }) {
+  return (
+    <section id={id} className="scroll-mt-24 py-16">
+      <div className="mx-auto max-w-6xl px-6">
+        <div className="mb-8 flex items-center gap-3">
+          <div className="rounded-2xl bg-slate-900 px-4 py-3 text-white shadow-lg text-xl">
+            {icon}
+          </div>
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900">{title}</h2>
+        </div>
+        {children}
+      </div>
+    </section>
+  );
+}
+
+export default function PortfolioWebsite() {
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-100 text-slate-800">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/85 backdrop-blur">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
+          <a href="#home" className="text-lg font-bold text-slate-950">Asif Iqbal, Ph.D.</a>
+          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+            <a href="#research" className="hover:text-slate-950">Research</a>
+            <a href="#publications" className="hover:text-slate-950">Publications</a>
+            <a href="#teaching" className="hover:text-slate-950">Teaching</a>
+            <a href="#awards" className="hover:text-slate-950">Awards</a>
+            <a href="#contact" className="hover:text-slate-950">Contact</a>
+          </div>
+        </nav>
+      </header>
+
+      <main id="home">
+        <section className="relative overflow-hidden py-24 md:py-32">
+          <div className="absolute inset-0 -z-10 opacity-40">
+            <div className="absolute left-10 top-20 h-72 w-72 rounded-full bg-slate-300 blur-3xl" />
+            <div className="absolute bottom-10 right-10 h-80 w-80 rounded-full bg-blue-200 blur-3xl" />
+          </div>
+          <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-[1.15fr_0.85fr]">
+            <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <p className="mb-4 inline-flex rounded-full border border-slate-300 bg-white px-4 py-2 text-sm font-medium text-slate-700 shadow-sm">
+                Microbiologist • Molecular Biologist • Educator
+              </p>
+              <h1 className="text-5xl font-extrabold leading-tight tracking-tight text-slate-950 md:text-6xl">
+                Asif Iqbal, Ph.D.
+              </h1>
+              <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-700">
+                Research scientist trained in bacterial pathogenesis, antimicrobial resistance, molecular microbiology, and host-relevant metabolic stress responses. My work focuses on how bacterial metabolic pathways shape virulence, stress tolerance, and antibiotic sensitivity.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Button asChild className="rounded-2xl px-5 py-6 text-base">
+                  <a href="#contact">Contact Me</a>
+                </Button>
+                <Button asChild variant="outline" className="rounded-2xl px-5 py-6 text-base">
+                  <a href="#publications">View Publications</a>
+                </Button>
+              </div>
+            </motion.div>
+
+            <motion.div initial={{ opacity: 0, scale: 0.96 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6, delay: 0.1 }}>
+              <Card className="rounded-3xl border-slate-200 shadow-xl">
+                <CardContent className="p-8">
+                  <div className="mb-6 rounded-3xl bg-slate-900 p-6 text-white">
+                    <div className="mb-4 text-4xl">🔬</div>
+                    <h3 className="text-2xl font-bold">Research Focus</h3>
+                    <p className="mt-3 text-slate-200">
+                      Bacterial physiology, Staphylococcus aureus pathogenesis, bicarbonate stress, metabolic adaptation, and antibiotic susceptibility.
+                    </p>
+                  </div>
+                  <div className="space-y-4 text-sm text-slate-700">
+                    <div className="flex gap-3"><span className="shrink-0 text-lg">📍</span> Baton Rouge, Louisiana</div>
+                    <div className="flex gap-3"><span className="shrink-0 text-lg">✉️</span> aiqbal5@lsu.edu / masifiqbal929@gmail.com</div>
+                    <div className="flex gap-3"><span className="shrink-0 text-lg">☎️</span> 225-939-5394</div>
+                    <div className="flex gap-3"><span className="shrink-0 text-lg">📄</span> U.S. Permanent Resident</div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </section>
+
+        <Section id="research" title="Research Experience" icon="🔬">
+          <div className="grid gap-6 md:grid-cols-3">
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-6">
+                <p className="text-sm font-semibold text-slate-500">2023 – 2026</p>
+                <h3 className="mt-2 text-xl font-bold text-slate-950">Postdoctoral Fellow in Microbiology</h3>
+                <p className="mt-3 text-slate-700">LSU School of Veterinary Medicine, Pathobiological Sciences</p>
+                <p className="mt-4 text-sm leading-6 text-slate-600">Deciphered bicarbonate metabolic pathways in Staphylococcus aureus and their impacts on pathogenicity and antibiotic sensitivity.</p>
+              </CardContent>
+            </Card>
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-6">
+                <p className="text-sm font-semibold text-slate-500">2017 – 2022</p>
+                <h3 className="mt-2 text-xl font-bold text-slate-950">Ph.D. in Biochemistry</h3>
+                <p className="mt-3 text-slate-700">Louisiana State University</p>
+                <p className="mt-4 text-sm leading-6 text-slate-600">Studied a membrane protein required for quorum sensing and virulence of Burkholderia glumae.</p>
+              </CardContent>
+            </Card>
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-6">
+                <p className="text-sm font-semibold text-slate-500">2014 – 2017</p>
+                <h3 className="mt-2 text-xl font-bold text-slate-950">Research Assistant</h3>
+                <p className="mt-3 text-slate-700">Shahjalal University of Science and Technology</p>
+                <p className="mt-4 text-sm leading-6 text-slate-600">Worked on recombinant cellulase and protease production from bacterial isolates using municipal solid waste.</p>
+              </CardContent>
+            </Card>
+          </div>
+        </Section>
+
+        <Section id="publications" title="Selected Publications" icon="📚">
+          <div className="space-y-4">
+            {publications.map((pub, index) => (
+              <Card key={index} className="rounded-2xl shadow-sm">
+                <CardContent className="p-5">
+                  <p className="leading-7 text-slate-700"><span className="font-bold text-slate-950">{index + 1}.</span> {pub}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </Section>
+
+        <Section id="teaching" title="Teaching & Mentoring" icon="🎓">
+          <div className="grid gap-6 md:grid-cols-3">
+            {teaching.map((item, index) => (
+              <Card key={index} className="rounded-3xl shadow-sm">
+                <CardContent className="p-6">
+                  <p className="text-sm font-semibold text-slate-500">{item.period}</p>
+                  <h3 className="mt-2 text-lg font-bold text-slate-950">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-6 text-slate-600">{item.details}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+          <Card className="mt-6 rounded-3xl bg-slate-900 text-white shadow-lg">
+            <CardContent className="p-6">
+              <h3 className="flex items-center gap-2 text-xl font-bold"><span>👥</span> Mentoring</h3>
+              <ul className="mt-4 grid gap-3 text-slate-200 md:grid-cols-3">
+                {mentors.map((mentor, index) => <li key={index}>• {mentor}</li>)}
+              </ul>
+            </CardContent>
+          </Card>
+        </Section>
+
+        <Section id="awards" title="Awards, Presentations & Leadership" icon="🏆">
+          <div className="grid gap-6 md:grid-cols-2">
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-slate-950">Awards & Honors</h3>
+                <ul className="mt-5 space-y-3 text-slate-700">
+                  {awards.map((award, index) => <li key={index}>• {award}</li>)}
+                </ul>
+              </CardContent>
+            </Card>
+            <Card className="rounded-3xl shadow-sm">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-slate-950">Selected Oral Presentations</h3>
+                <ul className="mt-5 space-y-3 text-slate-700">
+                  {talks.map((talk, index) => <li key={index}>• {talk}</li>)}
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+          <Card className="mt-6 rounded-3xl shadow-sm">
+            <CardContent className="p-6">
+              <h3 className="text-xl font-bold text-slate-950">Professional Service</h3>
+              <p className="mt-4 leading-7 text-slate-700">
+                Served as a poster-presentation judge at the 2025 Annual Meeting of SCB–ASM, participated in BioGrad Society activities at LSU, and served as election commissioner for the Bangladeshi Students Association at LSU.
+              </p>
+            </CardContent>
+          </Card>
+        </Section>
+
+        <Section id="contact" title="Contact" icon="✉️">
+          <Card className="rounded-3xl bg-slate-950 text-white shadow-xl">
+            <CardContent className="grid gap-8 p-8 md:grid-cols-[1fr_0.8fr]">
+              <div>
+                <h3 className="text-3xl font-bold">Let’s connect</h3>
+                <p className="mt-4 max-w-2xl leading-7 text-slate-300">
+                  Open to academic, postdoctoral, teaching, microbiology, molecular biology, and industry research opportunities related to bacterial pathogenesis, antimicrobial resistance, and host-relevant bacterial physiology.
+                </p>
+              </div>
+              <div className="space-y-4 text-slate-200">
+                <p className="flex items-center gap-3"><span>✉️</span> aiqbal5@lsu.edu</p>
+                <p className="flex items-center gap-3"><span>✉️</span> masifiqbal929@gmail.com</p>
+                <p className="flex items-center gap-3"><span>☎️</span> 225-939-5394</p>
+                <p className="flex items-center gap-3"><span>🔗</span> LinkedIn • Google Scholar • MyNCBI</p>
+              </div>
+            </CardContent>
+          </Card>
+        </Section>
+      </main>
+
+      <footer className="border-t border-slate-200 py-8 text-center text-sm text-slate-500">
+        © {new Date().getFullYear()} Asif Iqbal, Ph.D. All rights reserved.
+      </footer>
+    </div>
+  );
+}
