@@ -11,7 +11,6 @@
       --navy: #0f172a;
       --blue: #2563eb;
       --light-blue: #dbeafe;
-      --sky: #eff6ff;
       --text: #1e293b;
       --muted: #64748b;
       --line: #e2e8f0;
@@ -50,7 +49,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255, 255, 255, 0.92);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
@@ -66,7 +65,6 @@
       font-size: 1.1rem;
       font-weight: 800;
       color: var(--navy);
-      letter-spacing: -0.02em;
     }
 
     .nav-links {
@@ -83,8 +81,6 @@
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
       padding: 96px 0 84px;
       background:
         radial-gradient(circle at top left, #bfdbfe 0, transparent 32%),
@@ -92,20 +88,7 @@
         linear-gradient(135deg, #f8fafc 0%, #eff6ff 52%, #ffffff 100%);
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto -120px -160px auto;
-      width: 420px;
-      height: 420px;
-      border-radius: 999px;
-      background: rgba(37, 99, 235, 0.1);
-      filter: blur(10px);
-    }
-
     .hero-grid {
-      position: relative;
-      z-index: 1;
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 42px;
@@ -167,20 +150,13 @@
       box-shadow: 0 12px 22px rgba(15, 23, 42, 0.18);
     }
 
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      background: #020617;
-    }
-
     .btn-secondary {
       background: white;
       color: var(--navy);
     }
 
-    .btn-secondary:hover {
+    .btn:hover {
       transform: translateY(-2px);
-      border-color: var(--blue);
-      color: var(--blue);
     }
 
     .stats {
@@ -200,29 +176,37 @@
     }
 
     .profile-card {
-      background: rgba(255, 255, 255, 0.96);
+      background: white;
       border: 1px solid var(--line);
       border-radius: 30px;
       box-shadow: 0 24px 60px rgba(15, 23, 42, 0.12);
       overflow: hidden;
     }
 
+    .profile-photo {
+      width: 100%;
+      height: 340px;
+      object-fit: cover;
+      display: block;
+      background: #e2e8f0;
+    }
+
     .profile-top {
-      padding: 30px;
+      padding: 28px 30px;
       background: linear-gradient(135deg, var(--navy), #1e3a8a);
       color: white;
     }
 
     .avatar {
-      width: 76px;
-      height: 76px;
-      border-radius: 24px;
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
       display: grid;
       place-items: center;
       background: rgba(255, 255, 255, 0.13);
       border: 1px solid rgba(255, 255, 255, 0.18);
-      font-size: 2.3rem;
-      margin-bottom: 18px;
+      font-size: 2rem;
+      margin-bottom: 16px;
     }
 
     .profile-top h2 {
@@ -245,7 +229,6 @@
     .contact-list li {
       display: flex;
       gap: 10px;
-      align-items: flex-start;
       padding: 11px 0;
       border-bottom: 1px solid #eef2f7;
       color: #475569;
@@ -304,7 +287,8 @@
       gap: 20px;
     }
 
-    .card {
+    .card,
+    .wide-card {
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: 22px;
@@ -313,9 +297,15 @@
       transition: 0.22s ease;
     }
 
-    .card:hover {
+    .card:hover,
+    .wide-card:hover {
       transform: translateY(-4px);
       box-shadow: 0 18px 38px rgba(15, 23, 42, 0.09);
+    }
+
+    .wide-card {
+      margin-top: 22px;
+      padding: 30px 34px;
     }
 
     .date {
@@ -325,16 +315,40 @@
       margin-bottom: 10px;
     }
 
-    .card h3 {
+    .card h3,
+    .wide-card h3 {
       color: var(--navy);
       font-size: 1.18rem;
       line-height: 1.35;
       margin-bottom: 10px;
     }
 
-    .card p {
+    .wide-card h3 {
+      font-size: 1.45rem;
+    }
+
+    .card p,
+    .wide-card p {
       color: #475569;
       margin-top: 9px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .school-logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: white;
+      border: 1px solid var(--line);
+      padding: 6px;
+      flex-shrink: 0;
     }
 
     .publication-list,
@@ -368,22 +382,14 @@
       box-shadow: 0 0 0 5px #dbeafe;
     }
 
-    .feature-band {
-      background: linear-gradient(135deg, var(--navy), #172554);
-      color: white;
-      border-radius: 28px;
-      padding: 34px;
-      box-shadow: 0 24px 44px rgba(15, 23, 42, 0.18);
+    .publication-list a {
+      color: var(--blue);
+      font-weight: 800;
+      margin-left: 6px;
     }
 
-    .feature-band h3 {
-      font-size: 1.45rem;
-      margin-bottom: 12px;
-    }
-
-    .feature-band p,
-    .feature-band li {
-      color: #dbeafe;
+    .publication-list a:hover {
+      text-decoration: underline;
     }
 
     .footer-contact {
@@ -391,6 +397,16 @@
       grid-template-columns: 1.1fr 0.9fr;
       gap: 28px;
       align-items: center;
+      background: linear-gradient(135deg, var(--navy), #172554);
+      color: white;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 24px 44px rgba(15, 23, 42, 0.18);
+    }
+
+    .footer-contact p {
+      color: #dbeafe;
+      margin-top: 8px;
     }
 
     footer {
@@ -415,10 +431,6 @@
 
       .hero {
         padding: 70px 0 58px;
-      }
-
-      .profile-card {
-        max-width: 560px;
       }
     }
   </style>
@@ -451,10 +463,12 @@
             Research scientist with expertise in bacterial pathogenesis, antimicrobial resistance,
             molecular microbiology, and host-relevant bacterial metabolic stress responses.
           </p>
+
           <div class="button-row">
             <a class="btn btn-primary" href="#contact">Contact Me</a>
             <a class="btn btn-secondary" href="#publications">View Publications</a>
           </div>
+
           <div class="stats">
             <div class="stat-pill">Ph.D. in Biochemistry</div>
             <div class="stat-pill">Postdoctoral Research</div>
@@ -464,6 +478,8 @@
         </div>
 
         <aside class="profile-card">
+          <img class="profile-photo" src="assets/asif-photo.jpg" alt="Asif Iqbal, Ph.D.">
+
           <div class="profile-top">
             <div class="avatar">🧬</div>
             <h2>Research Focus</h2>
@@ -472,6 +488,7 @@
               metabolic adaptation, and antibiotic susceptibility.
             </p>
           </div>
+
           <div class="profile-bottom">
             <ul class="contact-list">
               <li><span>📍</span><span>Baton Rouge, Louisiana</span></li>
@@ -491,28 +508,45 @@
           <div class="section-icon">🔬</div>
           <h2>Research Experience</h2>
         </div>
+
         <p class="section-intro">
           Research background spanning bacterial physiology, host-relevant metabolic stress,
           antimicrobial sensitivity, quorum sensing, virulence, and industrial enzyme production.
         </p>
+
         <div class="grid-3">
           <div class="card">
-            <p class="date">2023 – 2026</p>
-            <h3>Postdoctoral Fellow in Microbiology</h3>
+            <div class="logo-row">
+              <img class="school-logo" src="assets/lsu-logo.png" alt="Louisiana State University logo">
+              <div>
+                <p class="date">2023 – 2026</p>
+                <h3>Postdoctoral Fellow in Microbiology</h3>
+              </div>
+            </div>
             <p><strong>Louisiana State University</strong><br>School of Veterinary Medicine, Pathobiological Sciences</p>
-            <p>Deciphered bicarbonate metabolic pathways in Staphylococcus aureus and their impacts on pathogenicity and antibiotic sensitivity.</p>
+            <p>Deciphered bicarbonate metabolic pathways in <em>Staphylococcus aureus</em> and their impacts on pathogenicity and antibiotic sensitivity.</p>
           </div>
 
           <div class="card">
-            <p class="date">2017 – 2022</p>
-            <h3>Ph.D. Research in Biochemistry</h3>
+            <div class="logo-row">
+              <img class="school-logo" src="assets/lsu-logo.png" alt="Louisiana State University logo">
+              <div>
+                <p class="date">2017 – 2022</p>
+                <h3>Ph.D. Research in Biochemistry</h3>
+              </div>
+            </div>
             <p><strong>Louisiana State University</strong><br>Biological Sciences</p>
-            <p>Studied a membrane protein required for quorum sensing and virulence of Burkholderia glumae.</p>
+            <p>Studied a membrane protein required for quorum sensing and virulence of <em>Burkholderia glumae</em>.</p>
           </div>
 
           <div class="card">
-            <p class="date">2014 – 2017</p>
-            <h3>Research Assistant</h3>
+            <div class="logo-row">
+              <img class="school-logo" src="assets/sust-logo.png" alt="Shahjalal University of Science and Technology logo">
+              <div>
+                <p class="date">2014 – 2017</p>
+                <h3>Research Assistant</h3>
+              </div>
+            </div>
             <p><strong>Shahjalal University of Science and Technology</strong></p>
             <p>Worked on recombinant cellulase and protease production from bacterial isolates using municipal solid waste.</p>
           </div>
@@ -526,20 +560,38 @@
           <div class="section-icon">🎓</div>
           <h2>Education</h2>
         </div>
+
         <div class="grid-3">
           <div class="card">
-            <p class="date">2022</p>
-            <h3>Ph.D., Biochemistry</h3>
+            <div class="logo-row">
+              <img class="school-logo" src="assets/lsu-logo.png" alt="Louisiana State University logo">
+              <div>
+                <p class="date">2022</p>
+                <h3>Ph.D., Biochemistry</h3>
+              </div>
+            </div>
             <p>Louisiana State University, Baton Rouge, Louisiana, USA</p>
           </div>
+
           <div class="card">
-            <p class="date">2014</p>
-            <h3>M.S., Genetic Engineering and Biotechnology</h3>
+            <div class="logo-row">
+              <img class="school-logo" src="assets/sust-logo.png" alt="Shahjalal University of Science and Technology logo">
+              <div>
+                <p class="date">2014</p>
+                <h3>M.S., Genetic Engineering and Biotechnology</h3>
+              </div>
+            </div>
             <p>Shahjalal University of Science and Technology, Sylhet, Bangladesh</p>
           </div>
+
           <div class="card">
-            <p class="date">2012</p>
-            <h3>B.Sc., Genetic Engineering and Biotechnology</h3>
+            <div class="logo-row">
+              <img class="school-logo" src="assets/sust-logo.png" alt="Shahjalal University of Science and Technology logo">
+              <div>
+                <p class="date">2012</p>
+                <h3>B.Sc., Genetic Engineering and Biotechnology</h3>
+              </div>
+            </div>
             <p>Shahjalal University of Science and Technology, Sylhet, Bangladesh</p>
           </div>
         </div>
@@ -552,13 +604,43 @@
           <div class="section-icon">📚</div>
           <h2>Selected Publications</h2>
         </div>
+
         <div class="card">
           <ul class="publication-list">
-            <li><strong>Iqbal A</strong>, Tumpa ZH, Blank BJ, Basel AH, Beavers WN. Defects in anaplerotic metabolism sensitizes <em>Staphylococcus aureus</em> small colony variants to bicarbonate. <em>Microbiology Spectrum</em>. 2025.</li>
-            <li><strong>Iqbal A</strong>, Nwokocha G, Tiwari V, Barphagha IK, Grove A, Ham JH, Doerrler WT. A membrane protein of the rice pathogen <em>Burkholderia glumae</em> required for oxalic acid secretion and quorum sensing. <em>Molecular Plant Pathology</em>. 2023.</li>
-            <li><strong>Iqbal A</strong>, Panta PR, Ontoy J, Bruno J, Ham JH, Doerrler WT. Chemical or genetic alteration of proton motive force results in loss of virulence of <em>Burkholderia glumae</em>. <em>Applied and Environmental Microbiology</em>. 2021.</li>
-            <li>Hakim A, Bhuiyan FR, <strong>Iqbal A</strong>, Emon TH, Ahmed J, Azad AK. Production and partial characterization of dehairing alkaline protease from <em>Bacillus subtilis</em> AKAL7 and <em>Exiguobacterium indicum</em> AKAL11. <em>Heliyon</em>. 2018.</li>
-            <li><strong>Iqbal A</strong>, Hakim A, Hossain MS, Rahman MR, Islam K, Azim MF, Ahmed J, Assaduzzaman M, Hoq MM, Azad AK. Partial purification and characterization of serine protease produced through fermentation of organic municipal solid wastes. <em>Journal of Genetic Engineering and Biotechnology</em>. 2018.</li>
+            <li>
+              <strong>Iqbal A</strong>, Tumpa ZH, Blank BJ, Basel AH, Beavers WN.
+              Defects in anaplerotic metabolism sensitizes <em>Staphylococcus aureus</em> small colony variants to bicarbonate.
+              <em>Microbiology Spectrum</em>. 2025.
+              <a href="#" target="_blank">View publication</a>
+            </li>
+
+            <li>
+              <strong>Iqbal A</strong>, Nwokocha G, Tiwari V, Barphagha IK, Grove A, Ham JH, Doerrler WT.
+              A membrane protein of the rice pathogen <em>Burkholderia glumae</em> required for oxalic acid secretion and quorum sensing.
+              <em>Molecular Plant Pathology</em>. 2023.
+              <a href="https://pubmed.ncbi.nlm.nih.gov/37428013/" target="_blank">View publication</a>
+            </li>
+
+            <li>
+              <strong>Iqbal A</strong>, Panta PR, Ontoy J, Bruno J, Ham JH, Doerrler WT.
+              Chemical or genetic alteration of proton motive force results in loss of virulence of <em>Burkholderia glumae</em>.
+              <em>Applied and Environmental Microbiology</em>. 2021.
+              <a href="https://pubmed.ncbi.nlm.nih.gov/34260305/" target="_blank">View publication</a>
+            </li>
+
+            <li>
+              Hakim A, Bhuiyan FR, <strong>Iqbal A</strong>, Emon TH, Ahmed J, Azad AK.
+              Production and partial characterization of dehairing alkaline protease from <em>Bacillus subtilis</em> AKAL7 and <em>Exiguobacterium indicum</em> AKAL11.
+              <em>Heliyon</em>. 2018.
+              <a href="#" target="_blank">View publication</a>
+            </li>
+
+            <li>
+              <strong>Iqbal A</strong>, Hakim A, Hossain MS, Rahman MR, Islam K, Azim MF, Ahmed J, Assaduzzaman M, Hoq MM, Azad AK.
+              Partial purification and characterization of serine protease produced through fermentation of organic municipal solid wastes.
+              <em>Journal of Genetic Engineering and Biotechnology</em>. 2018.
+              <a href="#" target="_blank">View publication</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -570,17 +652,20 @@
           <div class="section-icon">🧑‍🏫</div>
           <h2>Teaching & Mentoring</h2>
         </div>
+
         <div class="grid-3">
           <div class="card">
             <p class="date">Spring 2025</p>
             <h3>Instructor, PBS 7007 Pathobiological Seminar</h3>
             <p>Delivered lectures on scientific literature, guided student-led presentations, and provided feedback on figure interpretation and scientific communication.</p>
           </div>
+
           <div class="card">
             <p class="date">2017 – 2022</p>
             <h3>Graduate Teaching Assistant, Microbiology Lab</h3>
             <p>Taught aseptic techniques, single-colony streaking, microscopy, biochemical tests, plaque assays, bacterial enumeration, and data analysis.</p>
           </div>
+
           <div class="card">
             <p class="date">2017 – 2022</p>
             <h3>Graduate Teaching Assistant, Biology Lab</h3>
@@ -588,12 +673,12 @@
           </div>
         </div>
 
-        <div class="feature-band" style="margin-top: 22px;">
+        <div class="wide-card">
           <h3>Mentoring Experience</h3>
-          <p>
-            Mentored rotation Ph.D. students and undergraduate researchers in hypothesis formation,
-            experimental design, data collection, scientific writing, and interpretation of microbiology experiments.
-          </p>
+          <ul class="simple-list">
+            <li>Mentored rotation Ph.D. students and undergraduate researchers in hypothesis formation and experimental design.</li>
+            <li>Guided students in data collection, scientific writing, figure interpretation, and microbiology experiment analysis.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -604,6 +689,7 @@
           <div class="section-icon">🏆</div>
           <h2>Awards, Presentations & Service</h2>
         </div>
+
         <div class="grid-2">
           <div class="card">
             <h3>Awards & Honors</h3>
@@ -627,13 +713,13 @@
           </div>
         </div>
 
-        <div class="feature-band" style="margin-top: 22px;">
+        <div class="wide-card">
           <h3>Professional Service</h3>
-          <p>
-            Served as a poster-presentation judge at the 2025 Annual Meeting of SCB–ASM,
-            participated in BioGrad Society activities at LSU, and served as election commissioner
-            for the Bangladeshi Students Association at LSU.
-          </p>
+          <ul class="simple-list">
+            <li>Served as a poster-presentation judge at the 2025 Annual Meeting of SCB–ASM.</li>
+            <li>Participated in BioGrad Society activities at Louisiana State University.</li>
+            <li>Served as election commissioner for the Bangladeshi Students Association at LSU.</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -644,13 +730,15 @@
           <div class="section-icon">✉️</div>
           <h2>Contact</h2>
         </div>
-        <div class="feature-band footer-contact">
+
+        <div class="footer-contact">
           <div>
             <h3>Let’s Connect</h3>
             <p>
               Open to academic, postdoctoral, teaching, microbiology, molecular biology, and industry research opportunities related to bacterial pathogenesis, antimicrobial resistance, and host-relevant bacterial physiology.
             </p>
           </div>
+
           <div>
             <p><strong>Email:</strong> aiqbal5@lsu.edu</p>
             <p><strong>Email:</strong> masifiqbal929@gmail.com</p>
