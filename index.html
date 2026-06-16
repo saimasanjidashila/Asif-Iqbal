@@ -10,9 +10,12 @@
   <style>
     :root {
       --navy: #0f172a;
-      --blue: #2563eb;
+      --blue: #1d4ed8;
       --sky: #0ea5e9;
       --orange: #f97316;
+      --orange-dark: #ea580c;
+      --orange-soft: #fff7ed;
+      --shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
       --text: #1e293b;
       --muted: #64748b;
       --line: #dbeafe;
@@ -51,7 +54,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(255,255,255,0.9);
+      background: rgba(255,255,255,0.94);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
@@ -87,14 +90,14 @@
     }
 
     .nav-links a:hover {
-      color: var(--blue);
+      color: var(--orange-dark);
     }
 
     .hero {
       position: relative;
       overflow: hidden;
       padding: 95px 0 115px;
-      background: #eff6ff;
+      background: #eaf6ff;
     }
 
     .hero::before {
@@ -102,7 +105,7 @@
       position: absolute;
       inset: 0;
       background: url("assets/background.png") center/cover no-repeat;
-      opacity: 0.62;
+      opacity: 0.9;
       z-index: 0;
     }
 
@@ -111,9 +114,7 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(circle at 14% 20%, rgba(14,165,233,.22), transparent 34%),
-        radial-gradient(circle at 86% 18%, rgba(249,115,22,.18), transparent 32%),
-        linear-gradient(to bottom, rgba(255,255,255,.55), rgba(248,250,252,.96));
+        linear-gradient(to bottom, rgba(255,255,255,.18), rgba(248,250,252,.68));
       z-index: 0;
     }
 
@@ -127,18 +128,26 @@
     }
 
     .badge {
-      display: inline-flex;
+      display: flex;
+      flex-wrap: wrap;
       align-items: center;
       gap: 8px;
-      padding: 9px 15px;
+      max-width: 760px;
+      margin-bottom: 22px;
+    }
+
+    .badge span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 12px;
       border-radius: 999px;
-      background: rgba(255,255,255,.92);
-      border: 1px solid #bae6fd;
-      color: #075985;
-      font-size: 0.9rem;
+      background: rgba(255,255,255,.94);
+      border: 1px solid #fed7aa;
+      color: var(--navy);
+      font-size: 0.88rem;
       font-weight: 900;
       box-shadow: var(--shadow);
-      margin-bottom: 22px;
     }
 
     h1 {
@@ -149,10 +158,8 @@
       margin-bottom: 20px;
     }
 
-    .gradient {
-      background: linear-gradient(90deg, var(--navy), var(--sky));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    .orange-text {
+      color: var(--orange-dark);
     }
 
     .subtitle {
@@ -183,10 +190,10 @@
     }
 
     .btn-primary {
-      background: linear-gradient(135deg, var(--blue));
+      background: var(--orange);
       color: white;
-      border: none;
-      box-shadow: 0 12px 24px rgba(249,115,22,.18);
+      border: 1px solid var(--orange-dark);
+      box-shadow: 0 12px 24px rgba(249,115,22,.20);
     }
 
     .btn-secondary {
@@ -224,7 +231,7 @@
 
     .profile-top {
       padding: 30px;
-      background: linear-gradient(135deg, var(--navy), #1e3a8a);
+      background: var(--navy);
       color: white;
     }
 
@@ -288,10 +295,10 @@
       border-radius: 16px;
       display: grid;
       place-items: center;
-      background: linear-gradient(135deg, var(--blue), var(--orange));
+      background: var(--orange);
       color: white;
       font-size: 1.35rem;
-      box-shadow: 0 10px 24px rgba(15,23,42,.14);
+      box-shadow: 0 10px 22px rgba(249,115,22,.18);
       flex-shrink: 0;
     }
 
@@ -342,7 +349,7 @@
     }
 
     .date {
-      color: var(--blue);
+      color: var(--orange-dark);
       font-size: 0.9rem;
       font-weight: 900;
       margin-bottom: 8px;
@@ -388,7 +395,7 @@
     .logo-text {
       display: grid;
       place-items: center;
-      color: var(--blue);
+      color: var(--orange-dark);
       font-weight: 900;
       font-size: 0.95rem;
     }
@@ -403,9 +410,9 @@
     .tag {
       padding: 7px 10px;
       border-radius: 999px;
-      background: #eff6ff;
-      border: 1px solid #bfdbfe;
-      color: #1d4ed8;
+      background: var(--orange-soft);
+      border: 1px solid #fed7aa;
+      color: #9a3412;
       font-size: 0.82rem;
       font-weight: 800;
     }
@@ -443,8 +450,8 @@
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      background: var(--blue);
-      box-shadow: 0 0 0 5px #dbeafe;
+      background: var(--orange);
+      box-shadow: 0 0 0 5px #ffedd5;
     }
 
     .publication-item {
@@ -459,7 +466,7 @@
     }
 
     .publication-link {
-      color: var(--blue);
+      color: var(--orange-dark);
       font-weight: 900;
       white-space: nowrap;
       font-size: 0.95rem;
@@ -500,7 +507,7 @@
       position: absolute;
       inset: 0;
       background: url("assets/background.png") center bottom/cover no-repeat;
-      opacity: .52;
+      opacity: .82;
       z-index: 0;
     }
 
@@ -508,7 +515,7 @@
       content: "";
       position: absolute;
       inset: 0;
-      background: linear-gradient(to bottom, rgba(248,250,252,1), rgba(239,246,255,.55));
+      background: linear-gradient(to bottom, rgba(248,250,252,.72), rgba(255,247,237,.70));
       z-index: 0;
       pointer-events: none;
     }
@@ -523,7 +530,7 @@
       grid-template-columns: 1.1fr .9fr;
       gap: 28px;
       align-items: center;
-      background: linear-gradient(135deg, rgba(15,23,42,.98), rgba(23,37,84,.98));
+      background: var(--navy);
       color: white;
       border-radius: 28px;
       padding: 34px;
@@ -586,6 +593,7 @@
           <a href="#publications">Publications</a>
           <a href="#presentations">Presentations</a>
           <a href="#teaching">Teaching</a>
+          <a href="#awards">Awards</a>
           <a href="#service">Service</a>
           <a href="#contact">Contact</a>
         </div>
@@ -597,9 +605,15 @@
     <section class="hero">
       <div class="container hero-grid">
         <div>
-          <div class="badge">🔬 Research Scientist 🦠 Molecular Biologist 🧬 Microbiologist 📊 Data Analytics 🎓 Educator</div>
+          <div class="badge">
+            <span>🔬 Research Scientist</span>
+            <span>🦠 Molecular Biologist</span>
+            <span>🧬 Microbiologist</span>
+            <span>📊 Data Analytics</span>
+            <span>🎓 Educator</span>
+          </div>
 
-          <h1>Asif Iqbal, <span class="gradient">Ph.D.</span></h1>
+          <h1>Asif Iqbal, <span class="orange-text">Ph.D.</span></h1>
 
           <p class="subtitle">
             Ph.D. and postdoc-trained molecular microbiologist with expertise in host-pathogen interactions, molecular genetics, nucleotides sequencing, multi-omics analysis, antimicrobial resistance, microbial physiology, and microbial metabolism.
@@ -751,6 +765,29 @@
       </div>
     </section>
 
+    <section id="publications">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-icon">📚</div>
+          <h2>Publications</h2>
+        </div>
+
+        <div class="card">
+          <ul class="publication-list">
+            <li>Stackhouse A, <strong>Iqbal A</strong>, Ross D, Rico K, Blank B, LeBreton B, Bucher S, MacIntyre M, Beavers W. Polyunsaturated fatty acids: host-derived antimicrobials against glycolytic <em>Staphylococcus aureus</em>. Submitted in <em>Journal of Bacteriology</em>. Iqbal and Stackhouse equally contributed.</li>
+            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Tumpa ZH, Blank BJ, Basel AH, Beavers WN. Defects in anaplerotic metabolism sensitizes <em>Staphylococcus aureus</em> small colony variants to bicarbonate. <em>Microbiology Spectrum</em>. 2025.</div><a class="publication-link" href="https://doi.org/10.1128/spectrum.01685-25" target="_blank">View ↗</a></div></li>
+            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Nwokocha G, Tiwari V, Barphagha IK, Grove A, Ham JH, Doerrler WT. A membrane protein of the rice pathogen <em>Burkholderia glumae</em> required for oxalic acid secretion and quorum sensing. <em>Molecular Plant Pathology</em>. 2023. Featured in MPP Highlight Blog.</div><a class="publication-link" href="https://doi.org/10.1111/mpp.13376" target="_blank">View ↗</a></div></li>
+            <li><div class="publication-item"><div class="publication-text">Nwokocha G, Adhikari P, <strong>Iqbal A</strong>, Elkholy H, Doerrler WT, Larkin JC, Grove A. Transcription factor PecS mediates <em>Agrobacterium fabrum</em> fitness and survival. <em>Journal of Bacteriology</em>. 2023.</div><a class="publication-link" href="https://doi.org/10.1128/jb.00478-22" target="_blank">View ↗</a></div></li>
+            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Panta PR, Ontoy J, Bruno J, Ham JH, Doerrler WT. Chemical or genetic alteration of proton motive force results in loss of virulence of <em>Burkholderia glumae</em>. <em>Applied and Environmental Microbiology</em>. 2021. Featured in AEM Spotlight.</div><a class="publication-link" href="https://doi.org/10.1128/AEM.00915-21" target="_blank">View ↗</a></div></li>
+            <li><div class="publication-item"><div class="publication-text">Emon TH, Hakim A, Chakraborthy D, Bhuyan FR, <strong>Iqbal A</strong>, Hasan M, Aunkor TH, Azad AK. Kinetics, detergent compatibility and feather-degrading capability of alkaline protease from <em>Bacillus subtilis</em> AKAL7 and <em>Exiguobacterium indicum</em> AKAL11. <em>Journal of Environmental Science and Health, Part A</em>. 2020.</div><a class="publication-link" href="https://doi.org/10.1080/10934529.2020.1794207" target="_blank">View ↗</a></div></li>
+            <li><div class="publication-item"><div class="publication-text">Hakim A, Bhuiyan FR, <strong>Iqbal A</strong>, Emon TH, Ahmed J, Azad AK. Production and partial characterization of dehairing alkaline protease from <em>Bacillus subtilis</em> AKAL7 and <em>Exiguobacterium indicum</em> AKAL11. <em>Heliyon</em>. 2018.</div><a class="publication-link" href="https://doi.org/10.1016/j.heliyon.2018.e00646" target="_blank">View ↗</a></div></li>
+            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Hakim A, Hossain MS, Rahman MR, Islam K, Azim MF, Ahmed J, Assaduzzaman M, Hoq MM, Azad AK. Partial purification and characterization of serine protease produced through fermentation of organic municipal solid wastes. <em>Journal of Genetic Engineering and Biotechnology</em>. 2018.</div><a class="publication-link" href="https://doi.org/10.1016/j.jgeb.2017.10.011" target="_blank">View ↗</a></div></li>
+            <li>Hasan M, Hakim A, <strong>Iqbal A</strong>, Bhuiyan FR, Begum MK, Sharmin S, Abir RA. Computational study and homology modeling of phenol hydroxylase: key enzyme for phenol degradation. <em>International Journal of Computational Bioinformatics In-silico Model</em>. 2015.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="skills">
       <div class="container">
         <div class="section-heading">
@@ -791,29 +828,6 @@
               <span class="skill-chip">Scientific Writing</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="publications">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-icon">📚</div>
-          <h2>Publications</h2>
-        </div>
-
-        <div class="card">
-          <ul class="publication-list">
-            <li>Stackhouse A, <strong>Iqbal A</strong>, Ross D, Rico K, Blank B, LeBreton B, Bucher S, MacIntyre M, Beavers W. Polyunsaturated fatty acids: host-derived antimicrobials against glycolytic <em>Staphylococcus aureus</em>. Submitted in <em>Journal of Bacteriology</em>. Iqbal and Stackhouse equally contributed.</li>
-            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Tumpa ZH, Blank BJ, Basel AH, Beavers WN. Defects in anaplerotic metabolism sensitizes <em>Staphylococcus aureus</em> small colony variants to bicarbonate. <em>Microbiology Spectrum</em>. 2025.</div><a class="publication-link" href="https://doi.org/10.1128/spectrum.01685-25" target="_blank">View ↗</a></div></li>
-            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Nwokocha G, Tiwari V, Barphagha IK, Grove A, Ham JH, Doerrler WT. A membrane protein of the rice pathogen <em>Burkholderia glumae</em> required for oxalic acid secretion and quorum sensing. <em>Molecular Plant Pathology</em>. 2023. Featured in MPP Highlight Blog.</div><a class="publication-link" href="https://doi.org/10.1111/mpp.13376" target="_blank">View ↗</a></div></li>
-            <li><div class="publication-item"><div class="publication-text">Nwokocha G, Adhikari P, <strong>Iqbal A</strong>, Elkholy H, Doerrler WT, Larkin JC, Grove A. Transcription factor PecS mediates <em>Agrobacterium fabrum</em> fitness and survival. <em>Journal of Bacteriology</em>. 2023.</div><a class="publication-link" href="https://doi.org/10.1128/jb.00478-22" target="_blank">View ↗</a></div></li>
-            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Panta PR, Ontoy J, Bruno J, Ham JH, Doerrler WT. Chemical or genetic alteration of proton motive force results in loss of virulence of <em>Burkholderia glumae</em>. <em>Applied and Environmental Microbiology</em>. 2021. Featured in AEM Spotlight.</div><a class="publication-link" href="https://doi.org/10.1128/AEM.00915-21" target="_blank">View ↗</a></div></li>
-            <li><div class="publication-item"><div class="publication-text">Emon TH, Hakim A, Chakraborthy D, Bhuyan FR, <strong>Iqbal A</strong>, Hasan M, Aunkor TH, Azad AK. Kinetics, detergent compatibility and feather-degrading capability of alkaline protease from <em>Bacillus subtilis</em> AKAL7 and <em>Exiguobacterium indicum</em> AKAL11. <em>Journal of Environmental Science and Health, Part A</em>. 2020.</div><a class="publication-link" href="https://doi.org/10.1080/10934529.2020.1794207" target="_blank">View ↗</a></div></li>
-            <li><div class="publication-item"><div class="publication-text">Hakim A, Bhuiyan FR, <strong>Iqbal A</strong>, Emon TH, Ahmed J, Azad AK. Production and partial characterization of dehairing alkaline protease from <em>Bacillus subtilis</em> AKAL7 and <em>Exiguobacterium indicum</em> AKAL11. <em>Heliyon</em>. 2018.</div><a class="publication-link" href="https://doi.org/10.1016/j.heliyon.2018.e00646" target="_blank">View ↗</a></div></li>
-            <li><div class="publication-item"><div class="publication-text"><strong>Iqbal A</strong>, Hakim A, Hossain MS, Rahman MR, Islam K, Azim MF, Ahmed J, Assaduzzaman M, Hoq MM, Azad AK. Partial purification and characterization of serine protease produced through fermentation of organic municipal solid wastes. <em>Journal of Genetic Engineering and Biotechnology</em>. 2018.</div><a class="publication-link" href="https://doi.org/10.1016/j.jgeb.2017.10.011" target="_blank">View ↗</a></div></li>
-            <li>Hasan M, Hakim A, <strong>Iqbal A</strong>, Bhuiyan FR, Begum MK, Sharmin S, Abir RA. Computational study and homology modeling of phenol hydroxylase: key enzyme for phenol degradation. <em>International Journal of Computational Bioinformatics In-silico Model</em>. 2015.</li>
-          </ul>
         </div>
       </div>
     </section>
